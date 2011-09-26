@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="16" height="16" tilewidth="16" tileheight="16">
+ <properties>
+  <property name="bg1" value="#402010"/>
+  <property name="bg2" value="#100000"/>
+	<property name="fg1" value="#00ff0000"/>
+	<property name="fg2" value="#10ff0000"/>
+  <property name="display_name" value="Test Map"/>
+ </properties>
+ <tileset firstgid="1" name="debug" tilewidth="16" tileheight="16">
+  <image source="test-tiles.png"/>
+ </tileset>
+ <layer name="background" width="16" height="16" opacity="0.75">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA2NgGAXogInK5rGh0aNgFAwWAADxvIrYAAQAAA==
+  </data>
+ </layer>
+ <layer name="obstacle" width="16" height="16">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA82T4QqAIAyEZ1Jakb3/27YjB2MMMfvjwSHMfTp1BiIqg47sTOPKk/EXvWeCAnupLmqMDR7aa95RnVQumfye+vV6GM+PfEtgV/b9g5/p/UR4u+jEe3ncSTIx9Ia9J4/H3pvDezUmwwvbw0uN0h+658Stv4t59NIDVh+CwAAEAAA=
+  </data>
+ </layer>
+ <objectgroup name="doors" width="16" height="16">
+  <object name="door1" type="Door" x="128" y="208" width="16" height="32">
+   <properties>
+    <property name="image" value="door.png"/>
+    <property name="target" value="door2"/>
+   </properties>
+  </object>
+  <object name="door2" type="Door" x="64" y="32" width="16" height="32">
+   <properties>
+    <property name="image" value="door.png"/>
+    <property name="target" value="door1"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup name="objects" width="16" height="16">
+  <properties>
+   <property name="what_is_this" value="it's boxes ok"/>
+  </properties>
+  <object name="cardboard_box" type="Box" x="160" y="160" width="32" height="32">
+   <properties>
+    <property name="image" value="tid:16"/>
+   </properties>
+  </object>
+  <object name="stone_block" type="Box" x="192" y="32" width="32" height="32">
+   <properties>
+    <property name="image" value="tid:16"/>
+   </properties>
+  </object>
+  <object name="dude" type="Dude" x="80" y="144" width="16" height="32">
+   <properties>
+    <property name="image" value="dude.png"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <layer name="foreground" width="16" height="16" opacity="0.75">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA2NgGAWjYPABRiBmIoAJATYCeCD1EwMo1U8MAADF4i9MAAQAAA==
+  </data>
+ </layer>
+</map>
