@@ -1,7 +1,7 @@
 require File.join(File.dirname(__FILE__), 'spec_helper')
 describe 'Map' do
   it 'can load the test map' do
-    $map = Tmx::Map.new $window, File.join($data_dir, 'test.tmx'),
+    $map = Tmx::Map.new File.join($data_dir, 'test.tmx'),
       :scale_units => false
     $map.should.is_a? Tmx::Map
   end

@@ -13,5 +13,4 @@ module Tmx
   autoload :Layer,       'tmx/layer'
   autoload :Map,         'tmx/map'
   autoload :ObjectGroup, 'tmx/object_group'
-  autoload :TileSet,     'tmx/tile_set'
 end

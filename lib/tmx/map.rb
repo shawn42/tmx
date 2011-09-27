@@ -5,8 +5,6 @@ module Tmx
     
     include XMLLoader
     
-    attr_reader :window
-    
     attr_reader :properties
     attr_reader :columns,    :rows
     attr_reader :width,      :height
@@ -36,7 +34,7 @@ module Tmx
       :discard_object_info => false,
     }
     
-    def initialize window, file_name, options = {}
+    def initialize file_name, options = {}
       options = DEFAULT_OPTIONS.merge options
       
       # TODO move this XML code to an external module
@@ -56,7 +54,6 @@ module Tmx
       raise "Only version 1.0 maps are currently supported" unless mapdef['version']     == '1.0'
       raise "Only orthogonal maps are currently supported"  unless mapdef['orientation'] == 'orthogonal'
       
-      @window = window
       # @cache  = TileCache.new self
       
       @tile_width  = mapdef['tilewidth'].to_i
