@@ -37,9 +37,3 @@ module Tmx
   end # Coder
   
 end
-
-module Zlib
-  def self.decode(data)
-    Deflate::deflate data
-  end
-end
