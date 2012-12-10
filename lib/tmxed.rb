@@ -1,3 +1,6 @@
+require 'ostruct'
+require 'json'
+
 require "tmxed/version"
 require "tmxed/parsers/parsers"
 require "tmxed/map"
@@ -12,7 +15,7 @@ module Tmxed
     options[:format] = File.extname(filename)[1..-1] unless options[:format]
     file_contents = File.read(filename)
     contents = parser(options).parse(file_contents)
-    Map.new contents
+    Map.new contents.merge(contents: contents)
   end
 
   private
