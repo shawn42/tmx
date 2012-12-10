@@ -1,6 +1,10 @@
 # Tmxed
 
-A library for parsing the **Tiled Map Editor** file format.
+A library for parsing the **[Tiled Map Editor](http://www.mapeditor.org/)** file format.
+
+## Limitations
+
+* Support only for JSON format
 
 ## Installation
 
