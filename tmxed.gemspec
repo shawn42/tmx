@@ -8,9 +8,9 @@ Gem::Specification.new do |gem|
   gem.version       = Tmxed::VERSION
   gem.authors       = ["Franklin Webber"]
   gem.email         = ["franklin.webber@gmail.com"]
-  gem.description   = %q{Processes Tile Editor TMX files}
-  gem.summary       = %q{Processes Tile Editor TMX files}
-  gem.homepage      = ""
+  gem.description   = %q{A library for parsing the Tiled Map Editor file format.}
+  gem.summary       = %q{A library for parsing the Tiled Map Editor file format.}
+  gem.homepage      = "https://github.com/burtlo/tmxed"
   gem.license       = "MIT"
   
   gem.files         = `git ls-files`.split($/)
