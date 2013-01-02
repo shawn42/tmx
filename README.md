@@ -1,4 +1,4 @@
-# Tmxed
+# Tmx
 
 A library for parsing the **[Tiled Map Editor](http://www.mapeditor.org/)** file format.
 

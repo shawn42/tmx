@@ -1,4 +1,4 @@
-module Tmxed
+module Tmx
   class Layer < OpenStruct
 
   end

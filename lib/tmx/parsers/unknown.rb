@@ -1,4 +1,4 @@
-module Tmxed
+module Tmx
   module Parser
 
     #

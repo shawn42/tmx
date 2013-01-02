@@ -1,3 +1,3 @@
-module Tmxed
+module Tmx
   VERSION = "0.0.1"
 end

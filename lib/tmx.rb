@@ -5,7 +5,7 @@ require "tmxed/version"
 require "tmxed/parsers/parsers"
 require "tmxed/map"
 
-module Tmxed
+module Tmx
   extend self
 
   #

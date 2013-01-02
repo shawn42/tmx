@@ -1,7 +1,7 @@
 require_relative 'tile_set'
 require_relative 'layer'
 
-module Tmxed
+module Tmx
 
   class Map < OpenStruct
     def layers

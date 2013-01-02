@@ -4,13 +4,13 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'tmxed/version'
 
 Gem::Specification.new do |gem|
-  gem.name          = "tmxed"
-  gem.version       = Tmxed::VERSION
-  gem.authors       = ["Franklin Webber"]
+  gem.name          = "tmx"
+  gem.version       = Tmx::VERSION
+  gem.authors       = [" Shawn Anderson", "Franklin Webber"]
   gem.email         = ["franklin.webber@gmail.com"]
   gem.description   = %q{A library for parsing the Tiled Map Editor file format.}
   gem.summary       = %q{A library for parsing the Tiled Map Editor file format.}
-  gem.homepage      = "https://github.com/burtlo/tmxed"
+  gem.homepage      = "https://github.com/shawn42/tmx"
   gem.license       = "MIT"
   
   gem.files         = `git ls-files`.split($/)

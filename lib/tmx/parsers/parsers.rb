@@ -1,4 +1,4 @@
-module Tmxed
+module Tmx
 
   #
   # This module defines the parsers for the formats of various
