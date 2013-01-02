@@ -11,7 +11,7 @@ A library for parsing the **[Tiled Map Editor](http://www.mapeditor.org/)** file
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'tmxed'
+gem 'tmx'
 ```
 
 And then execute:
@@ -23,5 +23,5 @@ $ bundle
 Or install it yourself as:
 
 ```bash
-$ gem install tmxed
+$ gem install tmx
 ```
