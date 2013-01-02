@@ -1,9 +1,9 @@
 require 'ostruct'
 require 'json'
 
-require "tmxed/version"
-require "tmxed/parsers/parsers"
-require "tmxed/map"
+require "tmx/version"
+require "tmx/parsers/parsers"
+require "tmx/map"
 
 module Tmx
   extend self
