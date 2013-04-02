@@ -4,7 +4,7 @@
   <property name="hero.position" value="400,525,1"/>
  </properties>
  <tileset firstgid="1" name="tiles" tilewidth="50" tileheight="50">
-  <image source="../../../../../../Users/burtlo/burtlo/cough/assets/tiles.png" width="200" height="250"/>
+  <image source="tiles.png" width="200" height="250"/>
  </tileset>
  <layer name="Tile Layer 1" width="16" height="12">
   <data encoding="base64">

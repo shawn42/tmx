@@ -4,9 +4,12 @@
   <property name="hero.position" value="400,525,1"/>
  </properties>
  <tileset firstgid="1" name="tiles" tilewidth="50" tileheight="50">
-  <image source="../../../../../../Users/burtlo/burtlo/cough/assets/tiles.png" width="200" height="250"/>
+  <properties>
+   <property name="alpha" value="1"/>
+  </properties>
+  <image source="tiles.png" width="200" height="250"/>
  </tileset>
- <layer name="Tile Layer 1" width="16" height="12" opacity="0.42">
+ <layer name="Tile Layer 1" width="16" height="12">
   <data encoding="base64" compression="zlib">
    eJzN0N0KwCAIgFFZ+99qa+//sDNQEJlid7s40EVfaAkA0ocBTWQx7nhaP5I/9A/aSO3sL1ToPAfnkb3k9TxjVf2OsjgfRlvE+3r/G61G6+0b/X9r32jP87Hc2Z+KfM/auXkBKFMDxg==
   </data>
