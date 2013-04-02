@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="16" height="12" tilewidth="50" tileheight="50">
+ <properties>
+  <property name="hero.position" value="400,525,1"/>
+ </properties>
+ <tileset firstgid="1" name="tiles" tilewidth="50" tileheight="50">
+  <image source="tiles.png" width="200" height="250"/>
+ </tileset>
+ <layer name="Tile Layer 1" width="16" height="12">
+  <data encoding="csv">
+3,3,3,3,3,3,2,5,5,7,3,3,3,3,3,3,
+3,3,3,3,3,3,2,4,4,7,3,3,3,3,3,3,
+3,3,3,3,3,3,2,4,4,7,3,3,3,3,3,3,
+3,3,3,3,3,3,2,4,4,7,18,9,9,17,3,3,
+3,3,3,3,3,3,2,4,4,15,14,4,6,7,3,3,
+3,3,3,3,3,3,2,4,4,4,4,4,6,7,3,3,
+3,3,3,18,9,17,2,4,4,10,13,4,10,11,3,3,
+3,3,18,14,6,7,2,4,4,7,16,8,11,3,3,3,
+3,3,2,4,4,15,14,4,4,7,3,3,3,3,3,3,
+3,3,2,4,4,4,4,4,4,7,3,3,3,3,3,3,
+3,3,16,8,8,8,13,4,4,7,3,3,3,3,3,3,
+3,3,12,12,12,12,16,8,8,11,3,3,3,3,3,3
+</data>
+ </layer>
+</map>
