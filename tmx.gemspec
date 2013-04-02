@@ -6,7 +6,7 @@ require 'tmx/version'
 Gem::Specification.new do |gem|
   gem.name          = "tmx"
   gem.version       = Tmx::VERSION
-  gem.authors       = [" Shawn Anderson", "Franklin Webber"]
+  gem.authors       = ["Shawn Anderson", "Franklin Webber"]
   gem.email         = ["franklin.webber@gmail.com"]
   gem.description   = %q{A library for parsing the Tiled Map Editor file format.}
   gem.summary       = %q{A library for parsing the Tiled Map Editor file format.}

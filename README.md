@@ -2,9 +2,14 @@
 
 A library for parsing the **[Tiled Map Editor](http://www.mapeditor.org/)** file format.
 
-## Limitations
+## Support
 
-* Support only for JSON format
+* JSON format
+* TMX file (XML)
+* TMX file (Base64)
+* TMX file (Base64 zlib compressed)
+* TMX file (Base64 gzip compressed)
+* TMX file (CSV)
 
 ## Installation
 
