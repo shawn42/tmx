@@ -1,9 +1,11 @@
+require 'oj'
+
 module Tmx
   module Parser
 
     #
     # Parses the JSON formatted output from Tiled.
-    # 
+    #
     class Json
       attr_reader :options
 
@@ -12,7 +14,7 @@ module Tmx
       end
 
       def parse(contents)
-        JSON.parse(contents)
+        Oj.load(contents)
       end
     end
 

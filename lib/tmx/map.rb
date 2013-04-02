@@ -1,5 +1,5 @@
-require_relative 'tile_set'
-require_relative 'layer'
+require 'tmx/tile_set'
+require 'tmx/layer'
 
 module Tmx
 

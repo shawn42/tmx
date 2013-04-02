@@ -1,5 +1,4 @@
 require 'ostruct'
-require 'json'
 
 require "tmx/version"
 require "tmx/parsers/parsers"
@@ -9,16 +8,40 @@ module Tmx
   extend self
 
   #
-  # Parse the specified TMX file and return a Map that was found.
+  # Load the specified TMX file and return a Map that was found.
   #
-  def parse(filename,options={})
-    options[:format] = File.extname(filename)[1..-1] unless options[:format]
-    file_contents = File.read(filename)
-    contents = parser(options).parse(file_contents)
+  # @param [String] filename the name fo the Tiled Map file.
+  # @param [Hash] options
+  #
+  # @returns [Map] the map instance defined within the specified file
+  #
+  def load(filename,options={})
+    options = default_options(filename).merge(options)
+    parse contents(filename), options
+  end
+
+  #
+  # Parse the the string contents of a TMX file.
+  #
+  # @returns [Map] the map instance defined within the string
+  def parse(contents,options={})
+    contents = parser(options).parse contents
     Map.new contents.merge(contents: contents)
   end
 
   private
+
+  def format(filename)
+    File.extname(filename)[1..-1]
+  end
+
+  def contents(filename)
+    File.read(filename)
+  end
+
+  def default_options(filename)
+    { format: format(filename) }
+  end
 
   def parser(options)
     format = options[:format].to_sym

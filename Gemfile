@@ -1,4 +1,10 @@
 source 'https://rubygems.org'
 
-# Specify your gem's dependencies in tmx.gemspec
 gemspec
+
+group :test, :development do
+  gem 'debugger'
+  gem 'rspec'
+  gem 'guard-rspec'
+  gem 'rb-fsevent', '~> 0.9'
+end

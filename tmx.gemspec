@@ -12,7 +12,10 @@ Gem::Specification.new do |gem|
   gem.summary       = %q{A library for parsing the Tiled Map Editor file format.}
   gem.homepage      = "https://github.com/shawn42/tmx"
   gem.license       = "MIT"
-  
+
+  gem.add_dependency "oj", "~> 2.0"
+  gem.add_dependency "nokogiri", "~> 1.5"
+
   gem.files         = `git ls-files`.split($/)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
   gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})

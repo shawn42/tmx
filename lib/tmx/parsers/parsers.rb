@@ -25,5 +25,6 @@ module Tmx
   end
 end
 
-require_relative 'unknown'
-require_relative 'json'
+require 'tmx/parsers/unknown'
+require 'tmx/parsers/json'
+require 'tmx/parsers/tmx'
