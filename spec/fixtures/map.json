@@ -1,11 +1,153 @@
 { "height":12,
  "layers":[
         {
-         "data":[3, 3, 3, 3, 3, 3, 2, 5, 5, 7, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 2, 4, 4, 7, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 2, 4, 4, 7, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 2, 4, 4, 7, 18, 9, 9, 17, 3, 3, 3, 3, 3, 3, 3, 3, 2, 4, 4, 15, 14, 4, 6, 7, 3, 3, 3, 3, 3, 3, 3, 3, 2, 4, 4, 4, 4, 4, 6, 7, 3, 3, 3, 3, 3, 18, 9, 17, 2, 4, 4, 10, 13, 4, 10, 11, 3, 3, 3, 3, 18, 14, 6, 7, 2, 4, 4, 7, 16, 8, 11, 3, 3, 3, 3, 3, 2, 4, 4, 15, 14, 4, 4, 7, 3, 3, 3, 3, 3, 3, 3, 3, 2, 4, 4, 4, 4, 4, 4, 7, 3, 3, 3, 3, 3, 3, 3, 3, 16, 8, 8, 8, 13, 4, 4, 7, 3, 3, 3, 3, 3, 3, 3, 3, 12, 12, 12, 12, 16, 8, 8, 11, 3, 3, 3, 3, 3, 3],
+         "data":[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 141, 142, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 141, 142, 20, 0, 0, 0, 141, 142, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 28, 29, 30, 0, 0, 0, 0, 0, 25, 26, 27, 0, 0, 0, 0, 0, 46, 47, 48, 0, 0, 0, 0, 0, 43, 44, 45, 0, 0, 0, 0, 0, 0, 65, 0, 0, 8, 8, 8, 23, 0, 80, 0, 137, 138, 0, 0, 0, 0, 83, 0, 0, 0, 0, 50, 0, 0, 80, 0, 191, 192, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 19, 37, 38, 37, 37, 37, 38, 37, 37, 37, 37, 37, 19, 37, 37, 37, 37, 37, 37, 37, 37],
          "height":12,
-         "name":"Tile Layer 1",
+         "name":"Layer",
          "opacity":1,
          "type":"tilelayer",
+         "visible":true,
+         "width":16,
+         "x":0,
+         "y":0
+        }, 
+        {
+         "height":12,
+         "name":"Objects",
+         "objects":[
+                {
+                 "height":32,
+                 "name":"ground",
+                 "properties":
+                    {
+                     "type":"sand"
+                    },
+                 "type":"floor",
+                 "visible":true,
+                 "width":512,
+                 "x":0,
+                 "y":256
+                }, 
+                {
+                 "height":32,
+                 "name":"platform",
+                 "properties":
+                    {
+
+                    },
+                 "type":"floor",
+                 "visible":true,
+                 "width":96,
+                 "x":192,
+                 "y":192
+                }, 
+                {
+                 "ellipse":true,
+                 "height":32,
+                 "name":"mushroom",
+                 "properties":
+                    {
+                     "player.life.bonus":"1"
+                    },
+                 "type":"mushroom",
+                 "visible":true,
+                 "width":32,
+                 "x":256,
+                 "y":224
+                }, 
+                {
+                 "height":0,
+                 "name":"danger",
+                 "polygon":[
+                        {
+                         "x":0,
+                         "y":0
+                        }, 
+                        {
+                         "x":32,
+                         "y":64
+                        }, 
+                        {
+                         "x":-32,
+                         "y":64
+                        }, 
+                        {
+                         "x":0,
+                         "y":0
+                        }],
+                 "properties":
+                    {
+
+                    },
+                 "type":"sign",
+                 "visible":true,
+                 "width":0,
+                 "x":448,
+                 "y":192
+                }, 
+                {
+                 "height":0,
+                 "name":"dirt",
+                 "polyline":[
+                        {
+                         "x":0,
+                         "y":0
+                        }, 
+                        {
+                         "x":448,
+                         "y":0
+                        }, 
+                        {
+                         "x":448,
+                         "y":64
+                        }, 
+                        {
+                         "x":0,
+                         "y":64
+                        }, 
+                        {
+                         "x":0,
+                         "y":0
+                        }],
+                 "properties":
+                    {
+                     "bones":"2",
+                     "treasures":"2",
+                     "type":"dirt"
+                    },
+                 "type":"underground",
+                 "visible":true,
+                 "width":0,
+                 "x":32,
+                 "y":320
+                }, 
+                {
+                 "ellipse":true,
+                 "height":0,
+                 "name":"",
+                 "properties":
+                    {
+
+                    },
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":-32,
+                 "y":0
+                }],
+         "opacity":1,
+         "type":"objectgroup",
+         "visible":true,
+         "width":16,
+         "x":0,
+         "y":0
+        }, 
+        {
+         "height":12,
+         "image":"",
+         "name":"Image Layer",
+         "opacity":1,
+         "type":"imagelayer",
          "visible":true,
          "width":16,
          "x":0,
@@ -16,24 +158,24 @@
     {
      "hero.position":"400,525,1"
     },
- "tileheight":50,
+ "tileheight":32,
  "tilesets":[
         {
          "firstgid":1,
          "image":"tiles.png",
-         "imageheight":250,
-         "imagewidth":200,
-         "margin":0,
+         "imageheight":400,
+         "imagewidth":640,
+         "margin":2,
          "name":"tiles",
          "properties":
             {
-
+             "alpha":"1"
             },
-         "spacing":0,
-         "tileheight":50,
-         "tilewidth":50
+         "spacing":2,
+         "tileheight":32,
+         "tilewidth":32
         }],
- "tilewidth":50,
+ "tilewidth":32,
  "version":1,
  "width":16
 }

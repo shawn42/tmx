@@ -1,5 +1,8 @@
 require 'tmx/tile_set'
 require 'tmx/layer'
+require 'tmx/object_group'
+require 'tmx/object'
+require 'tmx/image_layer'
 
 module Tmx
 
@@ -10,6 +13,14 @@ module Tmx
 
     def tilesets
       @tilesets ||= Array(contents['tilesets']).map {|set| TileSet.new set.merge(contents: set) }
+    end
+
+    def object_groups
+      @object_groups ||= Array(contents['object_groups']).map {|group| ObjectGroup.new group.merge(contents: group) }
+    end
+
+    def image_layers
+      @object_groups ||= Array(contents['image_layers']).map {|layer| ImageLayer.new layer.merge(contents: layer) }
     end
   end
 end

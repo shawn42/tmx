@@ -32,7 +32,9 @@ module Tmx
           "tileheight" => map_attr(xml,"tileheight").to_i,
           "properties" => properties(xml.xpath("/map")),
           "layers" => map_layers(xml),
-          "tilesets" => map_tilesets(xml)
+          "tilesets" => map_tilesets(xml),
+          "object_groups" => map_object_groups(xml),
+          "image_layers" => map_image_layers(xml)
         }
       end
 
@@ -133,8 +135,64 @@ module Tmx
             "properties" => properties(xml)
           }
         end
+      end
 
+      def map_object_groups(xml)
+        xml.xpath("map/objectgroup").map do |object_group|
 
+          objects = object_group.xpath("object").map do |object|
+            properties = {
+              "name" => object.xpath("@name").text,
+              "type" => object.xpath("@type").text,
+              "x" => object.xpath("@x").text.to_i,
+              "y" => object.xpath("@y").text.to_i,
+              "width" => object.xpath("@width").text.to_i,
+              "height" => object.xpath("@height").text.to_i,
+              "visible" => (object.xpath("@visible").text =~ /^false$/ ? false : true),
+              "properties" => properties(object)
+            }
+
+            properties.merge(object_shape(object))
+          end
+
+          {
+            "name" => object_group.xpath("@name").text,
+            "width" => object_group.xpath("@width").text.to_i,
+            "height" => object_group.xpath("@height").text.to_i,
+            "opacity" => (object_group.xpath("@opacity").text == "" ? 1.0 : object_group.xpath("@opacity").text.to_f),
+            "objects" => objects
+          }
+        end
+      end
+
+      def object_shape(object)
+        if not object.xpath("ellipse").empty?
+          { "shape" => "ellipse" }
+        elsif not object.xpath("polyline").empty?
+          points = object.xpath("polyline/@points").text.split(" ")
+          { "shape" => "polyline", "points" => points }
+        elsif not object.xpath("polygon").empty?
+          points = object.xpath("polygon/@points").text.split(" ")
+          { "shape" => "polygon", "points" => points }
+        else
+          x = object.xpath("@x").text.to_i
+          y = object.xpath("@y").text.to_i
+          width = object.xpath("@width").text.to_i
+          height = object.xpath("@height").text.to_i
+          { "shape" => "polygon", "points" => [ "#{x},#{y}", "#{x + width},#{y}", "#{x + width},#{y + height}", "#{x},#{y + height}" ] }
+        end
+      end
+
+      def map_image_layers(xml)
+        xml.xpath("map/imagelayer").map do |image_layer|
+
+          {
+            "name" => image_layer.xpath("@name").text,
+            "width" => image_layer.xpath("@width").text.to_i,
+            "height" => image_layer.xpath("@height").text.to_i
+          }
+
+        end
       end
 
     end
