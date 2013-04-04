@@ -1,6 +1,6 @@
 # Tmx
 
-A library for parsing the **[Tiled Map Editor](http://www.mapeditor.org/)** file format.
+A library for parsing the **[Tiled Map Editor](http://www.mapeditor.org/)** file format (version 0.9).
 
 ## Support
 
