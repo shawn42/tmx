@@ -1,14 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" width="16" height="12" tilewidth="50" tileheight="50">
+<map version="1.0" orientation="orthogonal" width="16" height="12" tilewidth="32" tileheight="32">
  <properties>
   <property name="hero.position" value="400,525,1"/>
  </properties>
- <tileset firstgid="1" name="tiles" tilewidth="50" tileheight="50">
-  <image source="tiles.png" width="200" height="250"/>
+ <tileset firstgid="1" name="tiles" tilewidth="32" tileheight="32" spacing="2" margin="2">
+  <properties>
+   <property name="alpha" value="1"/>
+  </properties>
+  <image source="tiles.png" width="640" height="400"/>
  </tileset>
- <layer name="Tile Layer 1" width="16" height="12">
-  <data encoding="base64">
-   AwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAgAAAAUAAAAFAAAABwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAIAAAAEAAAABAAAAAcAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAACAAAABAAAAAQAAAAHAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAgAAAAQAAAAEAAAABwAAABIAAAAJAAAACQAAABEAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAIAAAAEAAAABAAAAA8AAAAOAAAABAAAAAYAAAAHAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAACAAAABAAAAAQAAAAEAAAABAAAAAQAAAAGAAAABwAAAAMAAAADAAAAAwAAAAMAAAADAAAAEgAAAAkAAAARAAAAAgAAAAQAAAAEAAAACgAAAA0AAAAEAAAACgAAAAsAAAADAAAAAwAAAAMAAAADAAAAEgAAAA4AAAAGAAAABwAAAAIAAAAEAAAABAAAAAcAAAAQAAAACAAAAAsAAAADAAAAAwAAAAMAAAADAAAAAwAAAAIAAAAEAAAABAAAAA8AAAAOAAAABAAAAAQAAAAHAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAACAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAEAAAAAgAAAAIAAAACAAAAA0AAAAEAAAABAAAAAcAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAwAAAAMAAAADAAAAAwAAAAQAAAACAAAAAgAAAALAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAA
+ <layer name="Layer" width="16" height="12">
+  <data encoding="base64" compression="zlib">
+   eJxjYKAc9AJxHxXMwWWuCB3skwFiWSCWwyEvCcRSQCyNQ14PiPWB2ACHvDYQ6wCxLh43OCKxOZCwOFQsAEp3AnEXFv3BWMSMkNgw/fuB+ACUzUghVqUjFobSamji6Hx09fgwAPQOECE=
   </data>
  </layer>
+ <objectgroup name="Objects" width="16" height="12">
+  <object name="ground" type="floor" x="0" y="256" width="512" height="32">
+   <properties>
+    <property name="type" value="sand"/>
+   </properties>
+  </object>
+  <object name="platform" type="floor" x="192" y="192" width="96" height="32"/>
+  <object name="mushroom" type="mushroom" x="256" y="224" width="32" height="32">
+   <properties>
+    <property name="player.life.bonus" value="1"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object name="danger" type="sign" x="448" y="192">
+   <polygon points="0,0 32,64 -32,64 0,0"/>
+  </object>
+  <object name="dirt" type="underground" x="32" y="320">
+   <properties>
+    <property name="bones" value="2"/>
+    <property name="treasures" value="2"/>
+    <property name="type" value="dirt"/>
+   </properties>
+   <polyline points="0,0 448,0 448,64 0,64 0,0"/>
+  </object>
+ </objectgroup>
+ <imagelayer name="Image Layer" width="16" height="12"/>
 </map>
