@@ -1,8 +1,8 @@
 require 'spec_helper'
 
-describe Tmx, "Isometric Map", "JSON format" do
+describe Tmx, "Isometric Map" do
 
-  let(:fixture_file) { File.join File.dirname(__FILE__), "..", "fixtures", "map-isometric.json" }
+  let(:fixture_file) { File.join File.dirname(__FILE__), "..", "fixtures", "map-isometric.tmx" }
 
   let(:map) do
     described_class.load(fixture_file)
