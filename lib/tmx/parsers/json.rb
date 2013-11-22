@@ -1,4 +1,4 @@
-require 'oj'
+require 'multi_json'
 
 module Tmx
   module Parser
@@ -14,7 +14,7 @@ module Tmx
       end
 
       def parse(contents)
-        parsed_contents = Oj.load(contents)
+        parsed_contents = MultiJson.load(contents)
 
         object_layers = parsed_contents["layers"].find_all do |layer|
           layer["type"] == "objectgroup"
