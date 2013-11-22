@@ -13,7 +13,7 @@ Gem::Specification.new do |gem|
   gem.homepage      = "https://github.com/shawn42/tmx"
   gem.license       = "MIT"
 
-  gem.add_dependency "oj", "~> 2.0"
+  gem.add_dependency "multi_json", "~> 1.0"
   gem.add_dependency "nokogiri", "~> 1.5"
 
   gem.files         = `git ls-files`.split($/)
