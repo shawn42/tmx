@@ -17,7 +17,9 @@ module Tmx
   #
   def load(filename,options={})
     options = default_options(filename).merge(options)
-    parse contents(filename), options
+
+    # Pass :filename in options for resolving relative "source" paths
+    parse contents(filename), options.merge(:filename => filename)
   end
 
   #
