@@ -120,10 +120,23 @@ module Tmx
 
       def map_tilesets(xml)
         xml.xpath("map/tileset").map do |tileset|
+          # Firstgid is usually set in the main file,
+          # even if a tileset is read from a separate file.
+          firstgid = tileset.xpath("@firstgid").text.to_i
+
+          source = tileset.xpath("@source")
+          if source && source.size > 0
+            this_dir = @options[:filename] ? File.dirname(@options[:filename]) : "."
+            tileset_path = File.join(this_dir, source.text)
+            contents = File.read(tileset_path)
+            results = Nokogiri::XML(contents)
+            tileset = results.xpath("tileset")
+          end
+
           image = tileset.xpath("image")
 
           properties = {
-            "firstgid" => tileset.xpath("@firstgid").text.to_i,
+            "firstgid" => firstgid || tileset.xpath("@firstgid").text.to_i,
             "name" => tileset.xpath("@name").text,
             "tilewidth" => tileset.xpath("@tilewidth").text.to_i,
             "tileheight" => tileset.xpath("@tileheight").text.to_i,
