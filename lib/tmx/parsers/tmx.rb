@@ -149,6 +149,8 @@ module Tmx
             "image" => image.xpath("@source").text,
             "imageheight" => image.xpath("@height").text.to_i,
             "imagewidth" => image.xpath("@width").text.to_i,
+            # "imagetrans" is a color to treat as transparent, like "ff00ff" for magenta.
+            "imagetrans" => image.xpath("@trans").text,
             "properties" => properties(xml)
           }
         end
