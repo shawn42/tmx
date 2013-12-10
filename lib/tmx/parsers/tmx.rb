@@ -66,7 +66,7 @@ module Tmx
 
           layer_hash["type"] = layer_attr(layer,"type",default: "tilelayer")
           layer_hash["opacity"] = layer_attr(layer,"opacity",default: 1.0).to_f
-          layer_hash["visible"] = (layer.xpath("@visible").text =~ /^false$/ ? false : true)
+          layer_hash["visible"] = to_boolean(layer.xpath("@visible").text)
 
           layer_hash["x"] = layer.xpath("@x").text.to_i
           layer_hash["y"] = layer.xpath("@y").text.to_i
@@ -118,6 +118,10 @@ module Tmx
         data.unpack("V" * (data.length / 4))
       end
 
+      def to_boolean(text)
+        ![ "false", "0" ].include?(text)
+      end
+
       def map_tilesets(xml)
         xml.xpath("map/tileset").map do |tileset|
           # Firstgid is usually set in the main file,
@@ -163,7 +167,7 @@ module Tmx
               "y" => object.xpath("@y").text.to_i,
               "width" => object.xpath("@width").text.to_i,
               "height" => object.xpath("@height").text.to_i,
-              "visible" => (object.xpath("@visible").text =~ /^false$/ ? false : true),
+              "visible" => to_boolean(object.xpath("@visible").text),
               "properties" => properties(object)
             }
 
