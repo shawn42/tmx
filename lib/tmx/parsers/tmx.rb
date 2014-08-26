@@ -72,6 +72,7 @@ module Tmx
           layer_hash["y"] = layer.xpath("@y").text.to_i
 
           layer_hash["data"] = data_from_layer(layer)
+          layer_hash["properties"] = properties(layer)
 
           layers.push layer_hash
         end
