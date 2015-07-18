@@ -27,7 +27,7 @@ describe Tmx, "Isometric Map" do
       its(:name) { should eq "Tile Layer 1" }
       its(:opacity) { should eq 1 }
       its(:type) { should eq "tilelayer" }
-      its(:visible) { should be_true }
+      its(:visible) { should be true }
       its(:height) { should eq 20 }
       its(:width) { should eq 10 }
       its(:x) { should eq 0 }
