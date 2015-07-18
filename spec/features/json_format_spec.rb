@@ -42,7 +42,7 @@ describe Tmx, "JSON Format" do
       its(:name) { should eq "Layer" }
       its(:opacity) { should eq 1 }
       its(:type) { should eq "tilelayer" }
-      its(:visible) { should be_true }
+      its(:visible) { should be true }
       its(:height) { should eq 12 }
       its(:width) { should eq 16 }
       its(:x) { should eq 0 }
@@ -97,7 +97,7 @@ describe Tmx, "JSON Format" do
         its(:y) { should eq 256 }
         its(:width) { should eq 512 }
         its(:height) { should eq 32 }
-        its(:visible) { should be_true }
+        its(:visible) { should be true }
 
         its(:properties) { should have(1).item }
 
@@ -119,7 +119,7 @@ describe Tmx, "JSON Format" do
         its(:y) { should eq 224 }
         its(:width) { should eq 32 }
         its(:height) { should eq 32 }
-        its(:visible) { should be_true }
+        its(:visible) { should be true }
 
         its(:properties) { should have(1).item }
 
@@ -141,7 +141,7 @@ describe Tmx, "JSON Format" do
         its(:y) { should eq 192 }
         its(:shape) { should eq "polygon" }
         its(:points) { should eq [ "0,0", "32,64", "-32,64", "0,0"] }
-        its(:visible) { should be_true }
+        its(:visible) { should be true }
 
         its(:properties) { should have(0).items }
 
@@ -155,7 +155,7 @@ describe Tmx, "JSON Format" do
         its(:type) { should eq "underground" }
         its(:x) { should eq 32 }
         its(:y) { should eq 320 }
-        its(:visible) { should be_true }
+        its(:visible) { should be true }
 
         its(:properties) { should have(3).items }
 
