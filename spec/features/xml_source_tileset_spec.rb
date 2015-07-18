@@ -38,6 +38,11 @@ describe Tmx, "Map with Source Tileset" do
       its(:tileheight) { should eq 32 }
       its(:tilewidth) { should eq 32 }
       its(:properties) { should eq({}) }
+
+      it "has the correct number of tiles" do
+        expect(subject.tiles).to have(2).items
+        expect(subject.tiles[0]["properties"]).to eq ({ "animation-delay0" => "18", "animation-delay1" => "15", "animation-delay2" => "14", "animation-delay3" => "15", "animation-delay4" => "14", "animation-frame0" => "0", "animation-frame1" => "1", "animation-frame2" => "2", "animation-frame3" => "3", "animation-frame4" => "4" })
+      end
     end
   end
 

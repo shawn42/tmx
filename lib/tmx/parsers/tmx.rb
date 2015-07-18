@@ -152,7 +152,29 @@ module Tmx
             "imagewidth" => image.xpath("@width").text.to_i,
             # "imagetrans" is a color to treat as transparent, like "ff00ff" for magenta.
             "imagetrans" => image.xpath("@trans").text,
+            "tiles" => tileset_tiles(tileset),
             "properties" => properties(xml)
+          }
+        end
+      end
+
+      def tileset_tiles(ts)
+        ts.xpath("tile").map do |tile|
+	  terrain_str = tile.xpath("@terrain").text
+          terrains = terrain_str.split(",",3).map { |s| s == "" ? nil : s.to_i }
+
+	  # Using image and properties like imageheight/imagetrans to match top level
+          image = tile.xpath("image")
+
+          {
+            "id" => tile.xpath("@id").text.to_i,
+            "terrain" => terrains,
+            "probability" => tile.xpath("@probability").text.to_f,
+            "image" => image.xpath("@source").text,
+            "imageheight" => image.xpath("@height").text.to_i,
+            "imagewidth" => image.xpath("@width").text.to_i,
+            "imagetrans" => image.xpath("@trans").text,
+            "properties" => properties(tile)
           }
         end
       end
