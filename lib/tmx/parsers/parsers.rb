@@ -27,4 +27,9 @@ end
 
 require 'tmx/parsers/unknown'
 require 'tmx/parsers/json'
-require 'tmx/parsers/tmx'
+begin
+  require 'nokogiri'
+  require 'tmx/parsers/tmx'
+rescue LoadError
+  require 'tmx/parsers/tmx-rexml'
+end
