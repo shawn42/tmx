@@ -227,8 +227,10 @@ module Tmx
 
       def map_image_layers(xml)
         xml.xpath("map/imagelayer").map do |image_layer|
+          image = image_layer.xpath("image")
 
           {
+            "image" => image.xpath("@source").text,
             "name" => image_layer.xpath("@name").text,
             "width" => image_layer.xpath("@width").text.to_i,
             "height" => image_layer.xpath("@height").text.to_i

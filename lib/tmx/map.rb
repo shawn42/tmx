@@ -26,7 +26,7 @@ module Tmx
     end
 
     def image_layers
-      @object_groups ||= Array(contents['image_layers']).map {|layer| ImageLayer.new layer.merge(contents: layer) }
+      @image_layers ||= Array(contents['image_layers']).map {|layer| ImageLayer.new layer.merge(contents: layer) }
     end
   end
 end
