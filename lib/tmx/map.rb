@@ -38,7 +38,6 @@ module Tmx
       object_groups = hash.delete(:object_groups)
       hash[:layers] += image_layers
       hash[:layers] += object_groups
-      hash[:layers].sort_by! { |l| l[:name] }
       hash.delete(:contents)
 
       object_groups.each do |object_layer|
