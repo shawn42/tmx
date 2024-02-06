@@ -35,10 +35,11 @@ module Tmx
 
       # Need to add back all non-tilelayers to hash["layers"]
       image_layers = hash.delete(:image_layers)
+      image_layers.map { |i| i[:type] = "imagelayer" }
       object_groups = hash.delete(:object_groups)
+      object_groups.map { |g| g[:type] = "objectgroup" }
       hash[:layers] += image_layers
       hash[:layers] += object_groups
-      hash[:layers].sort_by! { |l| l[:name] }
       hash.delete(:contents)
 
       object_groups.each do |object_layer|
